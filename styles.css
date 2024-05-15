@@ -1,0 +1,140 @@
+body 
+{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: yellow;
+  margin: 0;
+  padding: 0;
+}
+.container 
+{
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+h1 
+{
+  font-family: 'Anton', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: red;
+}
+hr.divider 
+{
+  border: none;
+  border-top: 7px solid blue;
+}
+nav 
+{
+  text-align: center;
+}
+nav a 
+{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: green;
+  margin: 0 15px;
+  text-decoration: underline;
+}
+table.customer-info 
+{
+  width: 100%;
+  margin-top: 20px;
+}
+table.customer-info td 
+{
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+table.customer-info input[type="text"] 
+{
+  width: calc(100% - 20px);
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+table#cart 
+{
+  width: 100%;
+  border-collapse: collapse;
+}
+table#cart th, table#cart td 
+{
+  padding: 8px;
+  border: 1px solid black;
+}
+table#cart th 
+{
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+table.pizza-options 
+{
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+table.pizza-options td 
+{
+  padding: 20px;
+}
+table.pizza-options img 
+{
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+div.pizza-info 
+{
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+div.pizza-info u 
+{
+  font-size: 20px;
+}
+div.pizza-info p 
+{
+  margin-bottom: 5px;
+}
+div.pizza-info strong 
+{
+  font-weight: bold;
+}
+div.pizza-info em 
+{
+  font-style: italic;
+  color: red;
+}
+div.pizza-info button 
+{
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer 
+{
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+footer p 
+{
+  font-size: 16px;
+}
+.submit-button {
+  background-color: white;
+}
+.delete-button {
+  background-color: white;
+}
+#cart th {
+  font-weight: bold;
+}

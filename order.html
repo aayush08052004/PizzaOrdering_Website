@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pizzaApp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lido Pizza Corner</title>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body ng-controller="PizzaController">
+        <div class="container">
+            <h1>Welcome to Lido Pizza</h1>
+            <hr class="divider">
+            <nav>
+                <a href="Lido.index.html">Home</a>
+                <a href="Lido.pizzas.html">Pizzas</a>
+                <a href="customer.info.php">Account</a>
+                <a href="cart.html">Cart</a>
+                <a href="order.html">Order</a>    
+            </nav>
+            <hr class="divider">
+            <h2>Customer Information</h2>
+            <table class="customer-info">
+                <tr>
+                    <td>NAME</td>
+                    <td>{{customer.name}}</td>
+                </tr>
+                <tr>
+                    <td>CONTACT</td>
+                    <td>{{customer.contact}}</td>
+                </tr>
+                <tr>
+                    <td>ADDRESS</td>
+                    <td>{{customer.address}}</td>
+                </tr>
+            </table>
+            <h2>Cart</h2>
+            <table id="cart">
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Name of Pizza</th>
+                    <th>Size of Pizza</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr ng-repeat="item in cart track by $index">
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.size}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>RS {{item.price}}</td>
+                </tr>
+            </table>
+            <table id="totalTable">
+                <tr id="totalRow" ng-show="cart.length > 0">
+                    <td colspan="4">Total:</td>
+                    <td id="totalPriceCell">RS {{getTotal()}}</td>
+                </tr>
+                <tr>
+                    <td colspan="5" ng-show="cart.length === 0">Cart is empty</td>
+                </tr>
+            </table>
+            <center><center><button ng-click="confirmOrder()">Order</button></center></center>
+            <hr class="divider">
+            <footer>
+                <p>Copyright @Lido Pizzas</p>
+            </footer>
+            <hr class="divider">
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

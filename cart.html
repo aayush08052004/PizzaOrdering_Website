@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pizzaApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lido Pizza Corner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="CartController">
+    <center>
+        <div class="container">
+            <h1>Welcome to Lido Pizza</h1>
+            <hr class="divider">
+            <nav>
+                <a href="Lido.index.html">Home</a>
+                <a href="Lido.pizzas.html">Pizzas</a>
+                <a href="customer.info.php">Account</a>
+                <a href="cart.html">Cart</a>
+                <a href="order.html">Order</a>
+            </nav>
+            <hr size=5 color=blue />
+            <table class="customer-info">
+                <tr>
+                    <td>CART</td>
+                    <td>
+                        <table id="cart">
+                            <tr>
+                                <th>Sr.No.</th>
+                                <th>Name of Pizza</th>
+                                <th>Size of Pizza</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+                            </tr>
+                            <tr ng-repeat="item in cart track by $index">
+                                <td>{{$index + 1}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.size}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td>RS {{item.price}}</td>
+                                <td><button ng-click="removeFromCart($index)" class="delete-button">Delete</button></td>
+                            </tr>
+                        </table>
+                        <table id="totalTable">
+                            <tr id="totalRow" ng-show="cart.length > 0">
+                                <td colspan="4">Total:</td>
+                                <td id="totalPriceCell">RS {{getTotal()}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" ng-show="cart.length === 0">Cart is empty</td>
+                            </tr>
+                        </table>
+                        <center><button ng-click="storeCart()" class="submit-button">Submit</button></center>                                
+                    </td>
+                </tr>
+            </table>
+            <table class="pizza-options">
+                <tr>
+                    <td>
+                        <div>
+                            <img ng-src="MUSHROOMS WITH OLIVES SUPREME.jpg" alt="pizza1">
+                            <div class="pizza-info">
+                                <u>MUSHROOMS WITH OLIVES SUPREME</u><p></p>
+                                <button ng-click="addToCart('MUSHROOMS WITH OLIVES SUPREME', 'Small', 399)">Small</button>
+                                <button ng-click="addToCart('MUSHROOMS WITH OLIVES SUPREME', 'Medium', 799)">Medium</button>
+                                <button ng-click="addToCart('MUSHROOMS WITH OLIVES SUPREME', 'Large', 899)">Large</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <img ng-src="RICH BASIL MARGHERITA.jpg" alt="pizza2">
+                            <div class="pizza-info">
+                                <u>RICH BASIL MARGHERITA</u><p></p>
+                                <button ng-click="addToCart('RICH BASIL MARGHERITA', 'Small', 399)">Small</button>
+                                <button ng-click="addToCart('RICH BASIL MARGHERITA', 'Medium', 799)">Medium</button>
+                                <button ng-click="addToCart('RICH BASIL MARGHERITA', 'Large', 899)">Large</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <img ng-src="SPICY JALAPENO.jpg" alt="pizza3">
+                            <div class="pizza-info">
+                                <u>SPICY JALAPENO</u><p></p>
+                                <button ng-click="addToCart('SPICY JALAPENO', 'Small', 399)">Small</button>
+                                <button ng-click="addToCart('SPICY JALAPENO', 'Medium', 799)">Medium</button>
+                                <button ng-click="addToCart('SPICY JALAPENO', 'Large', 899)">Large</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <hr class="divider">
+            <footer>
+                <p>Copyright @Lido Pizzas</p>
+            </footer>
+            <hr class="divider">
+        </div>            
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
